@@ -9,13 +9,13 @@ public class Usage {
 
     public String getSpeed() throws Exception {
         ProcessBuilder processBuilder = new ProcessBuilder();
-        processBuilder.command("/root/bash/speedtest.sh");
+        processBuilder.command("/root/speedtest.sh");
         Process process = processBuilder.start();
         StringBuilder output = new StringBuilder();
         BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
         String line;
         while ((line = reader.readLine()) != null) {
-            output.append(line + "\n");
+            output.append(line).append("\n");
         }
 
         int exitVal = process.waitFor();
@@ -33,7 +33,7 @@ public class Usage {
         // processBuilder.command("bash", "-c", "ls /home/mkyong/");
 
         // Run a shell script
-        processBuilder.command("/root/bash/cpu.sh");
+        processBuilder.command("/root/cpu.sh");
 
         // -- Windows --
 
@@ -52,7 +52,7 @@ public class Usage {
 
         String line;
         while ((line = reader.readLine()) != null) {
-            output.append(line + "\n");
+            output.append(line).append("\n");
         }
 
         int exitVal = process.waitFor();

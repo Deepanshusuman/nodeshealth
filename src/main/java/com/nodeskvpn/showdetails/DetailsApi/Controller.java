@@ -18,6 +18,7 @@ public class Controller implements ErrorController {
             data.setCpu(new Usage().getCpu().trim());
             data.setSpeed(new Usage().getSpeed().trim());
         } catch (Exception e) {
+            e.printStackTrace();
             data.setCpu(null);
             data.setSpeed(null);
         }
